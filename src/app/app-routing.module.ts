@@ -9,7 +9,8 @@ import { SignupPageComponent } from './pages/account/signup-page/signup-page.com
 
 
 const routes: Routes = [
-  {path:'', children:[
+  {path:'', component: FramePageComponent,
+  children:[
     { path:'',component:ProductPageComponent  },
   {path:'cart', component:CartPageComponent}
 ]},
