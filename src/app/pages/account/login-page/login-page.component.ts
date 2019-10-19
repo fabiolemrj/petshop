@@ -41,7 +41,7 @@ export class LoginPageComponent implements OnInit {
        
         (data: any)=>{
           this.busy=false;
-          Security.set(data.customer, data.token);
+          this.setUser(data.customer, data.token);
       
         },
         (err) =>{
@@ -55,11 +55,11 @@ export class LoginPageComponent implements OnInit {
 
   submit(){   
       this.busy = true;
-      this.data.refreshToken().subscribe(
-       
+      this.data.authenticate(this.form.value)
+       .subscribe(       
         (data: any)=>{
           this.busy=false;
-          Security.set(data.customer, data.token);
+          this.setUser(data.customer, data.token);
       
         },
         (err) =>{

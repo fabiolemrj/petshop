@@ -6,15 +6,20 @@ import { CartPageComponent } from './pages/store/cart-page/cart-page.component';
 import { FramePageComponent } from './pages/master/frame.page';
 import { PetsPageComponent } from './pages/store/pets-page/pets-page.component';
 import { SignupPageComponent } from './pages/account/signup-page/signup-page.component';
+import { AuthService } from './services/auth.service';
+import { ChekoutPageComponent } from './store/chekout-page/chekout-page.component';
 
 
 const routes: Routes = [
   {path:'', component: FramePageComponent,
+
   children:[
     { path:'',component:ProductPageComponent  },
-  {path:'cart', component:CartPageComponent}
+  {path:'cart', component:CartPageComponent,   canActivate:[AuthService]},
+  {path:'checkout', component:ChekoutPageComponent, canActivate:[AuthService]}
 ]},
 {path:'account', component:FramePageComponent,
+
 children:[
   {path:'pets',component:PetsPageComponent}
 ]},
