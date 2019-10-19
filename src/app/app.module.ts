@@ -23,6 +23,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
 import { MaskDirective } from './directives/mask.directive';
 import { AuthService } from './services/auth.service';
 import { ChekoutPageComponent } from './store/chekout-page/chekout-page.component';
+import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ChekoutPageComponent } from './store/chekout-page/chekout-page.componen
     FramePageComponent,
     ProductCardComponent,
     LoadingComponent,
-    ChekoutPageComponent
+    ChekoutPageComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,

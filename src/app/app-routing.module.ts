@@ -8,6 +8,8 @@ import { PetsPageComponent } from './pages/store/pets-page/pets-page.component';
 import { SignupPageComponent } from './pages/account/signup-page/signup-page.component';
 import { AuthService } from './services/auth.service';
 import { ChekoutPageComponent } from './store/chekout-page/chekout-page.component';
+import { ResetPasswordPageComponent } from './pages/account/reset-password-page/reset-password-page.component';
+import { ProfilePageComponent } from './pages/account/profile-page/profile-page.component';
 
 
 const routes: Routes = [
@@ -19,13 +21,13 @@ const routes: Routes = [
   {path:'checkout', component:ChekoutPageComponent, canActivate:[AuthService]}
 ]},
 {path:'account', component:FramePageComponent,
-
 children:[
+  {path:'', component:ProfilePageComponent},
   {path:'pets',component:PetsPageComponent}
 ]},
   {path:'login', component:LoginPageComponent},
   {path:'signup', component:SignupPageComponent},
-  {path:'reset-password', component:LoginPageComponent}
+  {path:'reset-password', component:ResetPasswordPageComponent}
 ];
 
 @NgModule({
