@@ -19,4 +19,17 @@ export class DataService {
       return this.http.post(`${this.url}/accounts/authenticate`, data);
     }
 
+    refreshToken(){
+      return this.http.post(`${this.url}/accounts/refresh-token`, null,{ headers: this.composeHeaders()});
+    }
+
+    /**
+     * name
+     */
+    public composeHeaders() {
+      const token = localStorage.getItem('petshop.token');
+      const headers = new HttpHeaders().set('Authorization',`bearer${token}`);
+      return headers;
+    }
+
 }

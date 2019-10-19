@@ -3,6 +3,7 @@
       <p class="uk-text-center uk-margin-large-top uk-margin-medium-bottom">
         <span class="uk-icon uk-margin-small-right" uk-icon="icon: logo-color-dark; ratio: 0.7"></span>
       </p>
+      <app-loading *ngIf="busy"></app-loading>
       <form [formGroup]="form">
           <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
               <h3 class="uk-card-title">Autentique-se</h3>
@@ -18,6 +19,7 @@
               </div>
               <div class="uk-margin uk-text-right">
                 <button class="uk-button uk-button-default" [disabled]="form.invalid" (click)="submit()">Entrar</button>
+              
               </div>
             </div>
         

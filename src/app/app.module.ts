@@ -16,10 +16,15 @@ import { FramePageComponent } from './pages/master/frame.page';
 import { DataService } from './services/data.service';
 import { ProductCardComponent } from './pages/store/product-card/product-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingComponent } from './shared/loading/loading.component';
+import { MaskDirective } from './directives/mask.directive';
+
 
 
 @NgModule({
   declarations: [
+
+    MaskDirective,
     AppComponent,
     NavbarComponent,
     LoginPageComponent,
@@ -29,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductPageComponent,
     CartPageComponent,
     FramePageComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
